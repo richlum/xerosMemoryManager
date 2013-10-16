@@ -1,0 +1,25 @@
+                DataStart Address = 9e00
+   1  address=  9e90, size= 96160, prev=  9df0, next=196000, sanity=  da43
+                DataStart Address = 9ea0
+   2  address=196000, size=269ff0, prev=  9e90, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146112 (0x300180)memory blocks
+    --result should have first memblock at head of freelist
+TEST 3 ===================
+   --freeing D freememFFCDE - link in middle
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e60)
+msghdr = 0x9e50
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9df0, size=    30, prev=     0, next=  9e50, sanity=  da43
+                DataStart Address = 9e00
+   1  address=  9e50, size=    10, prev=  9df0, next=  9e90, sanity=  da43
+                DataStart Address = 9e60
+   2  address=  9e90, size= 96160, prev=  9e50, next=196000, sanity=  da43
+                DataStart Address = 9ea0
+   3  address=196000, size=269ff0, prev=  9e90, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146128 (0x300190)memory blocks
+    --result should have first memblock at head of freelist
+ß

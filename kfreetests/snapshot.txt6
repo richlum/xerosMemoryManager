@@ -1,0 +1,25 @@
+        total size available across 3146224 (0x3001f0)memory blocks
+    --result should have first memblock at head of freelist
+TEST 6 ===================
+    -- free addresses that are already free
+0 9e00 Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e00)
+msghdr = 0x9df0
+trying to free (0x9e00) and address that is already free
+1 9e20 Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e20)
+msghdr = 0x9e10
+trying to free (0x9e20) and address that is already free
+2 9e40 Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e40)
+msghdr = 0x9e30
+trying to free (0x9e40) and address that is already free
+3 9e60 Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e60)
+msghdr = 0x9e50
+trying to free (0x9e60) and address that is already free
+4 9e80 Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e80)
+msghdr = 0x9e70
+trying to free (0x9e80) and address that is already free
+ß

@@ -1,0 +1,25 @@
+Located at: 0 to 59ec
+first free word after kernel stack  is freemem = 99ec
+maximum memory address, maxaddr = 3fffff
+holestart = a0000, holend = 196000, holesize = 258
+Entered:kmeminit:  AT ../c/mem.c:21
+freemem = 99ec, set start = 99f0
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  99f0, size= 96600, prev=     0, next=196000, sanity=  da43
+                DataStart Address = 9a00
+   1  address=196000, size=269ff0, prev=  99f0, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3147248 (0x3005f0)memory blocks
+Entered:testkmalloc:  AT ../c/mytests.c:18
+Entered:kmalloc:  AT ../c/mem.c:51
+*******************TESTKMALLOC***************
+1. kmalloc(0x1) returned address 9a00
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9a10, size= 965e0, prev=     0, next=196000, sanity=  da43
+                DataStart Address = 9a20
+   1  address=196000, size=269ff0, prev=  9a10, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3147216 (0x3005d0)memory blocks
+ß

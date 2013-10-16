@@ -1,0 +1,26 @@
+name: 	Richard Lum
+class: cs415
+instructor: Dr. Acton
+
+1. To run final project, from xeros directory 
+	make clean; make ; make beros
+
+2. To run memory test, from xeros directory
+	make clean; make memtest; make beros
+Note that memory test includes a random kmalloc kfree
+as the last test that randomly allocates and deallocates
+few thousand memory blocks continously - never returns
+
+3. To run final project, in verbose debugging mode,
+from xeros directory 
+	make clean; make debug; make beros
+Will show code path, process creation, yield, run
+process runq, readyq and many stack dumps.  Could be more
+pretty but all the info is there if somewhat hard to read.
+
+Tests and debug contains pauses (approx 5 to 10 sec)to allow
+snapshots, so running all tests wil be a little slow
+
+
+Richard
+

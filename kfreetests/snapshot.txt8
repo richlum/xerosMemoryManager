@@ -1,0 +1,25 @@
+--freeMemList
+   0  address=  9e10, size=    10, prev=     0, next=  9e90, sanity=  da43
+                DataStart Address = 9e20
+   1  address=  9e90, size= 96160, prev=  9e10, next=196000, sanity=  da43
+                DataStart Address = 9ea0
+   2  address=196000, size=269ff0, prev=  9e90, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146080 (0x300160)memory blocks
+   --second address should be part of free list (not adj to freemem)
+TEST 8 ===================
+   --now test freeing A - freemem on left, already free on right
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9e00)
+msghdr = 0x9df0
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9df0, size=    20, prev=     0, next=  9e90, sanity=  da43
+                DataStart Address = 9e00
+   1  address=  9e90, size= 96160, prev=  9df0, next=196000, sanity=  da43
+                DataStart Address = 9ea0
+   2  address=196000, size=269ff0, prev=  9e90, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146096 (0x300170)memory blocks
+    --result should have first memblock at head of freelist, size 30
+ß

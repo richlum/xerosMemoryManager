@@ -1,0 +1,25 @@
+   0  address=  9a50, size= 965a0, prev=     0, next=22e660, sanity=  da43
+                DataStart Address = 9a60
+   1  address=22e660, size=1d1990, prev=  9a50, next=     0, sanity=  da43
+                DataStart Address = 22e670
+        total size available across 2522928 (0x267f30)memory blocks
+Entered:kmalloc:  AT ../c/mem.c:51
+Not enough Memory to allocate 30539776 bytes
+5. kmalloc(0x1d20000) returned address 0
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9a50, size= 965a0, prev=     0, next=22e660, sanity=  da43
+                DataStart Address = 9a60
+   1  address=22e660, size=1d1990, prev=  9a50, next=     0, sanity=  da43
+                DataStart Address = 22e670
+        total size available across 2522928 (0x267f30)memory blocks
+Entered:kmalloc:  AT ../c/mem.c:51
+6. kmalloc(0x980b1) returned address 22e670
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9a50, size= 965a0, prev=     0, next=2c6730, sanity=  da43
+                DataStart Address = 9a60
+   1  address=2c6730, size=1398c0, prev=  9a50, next=     0, sanity=  da43
+                DataStart Address = 2c6740
+        total size available across 1900128 (0x1cfe60)memory blocks
+ß

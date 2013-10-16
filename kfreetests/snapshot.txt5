@@ -1,0 +1,25 @@
+msghdr = 0x9e30
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9df0, size=    70, prev=     0, next=  9e90, sanity=  da43
+                DataStart Address = 9e00
+   1  address=  9e90, size= 96160, prev=  9df0, next=196000, sanity=  da43
+                DataStart Address = 9ea0
+   2  address=196000, size=269ff0, prev=  9e90, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146176 (0x3001c0)memory blocks
+    --result should have first memblock at head of freelist
+TEST 5 ===================
+   --freeing E freememFFFFE - coallesce (prev, target, next) nEntered:kfree:  AT
+ ../c/mem.c:242
+kfree(0x9e80)
+msghdr = 0x9e70
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9df0, size= 96200, prev=     0, next=196000, sanity=  da43
+                DataStart Address = 9e00
+   1  address=196000, size=269ff0, prev=  9df0, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146224 (0x3001f0)memory blocks
+    --result should have first memblock at head of freelist
+ß

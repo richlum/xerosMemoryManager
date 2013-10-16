@@ -1,0 +1,51 @@
+screenshots of kmalloc tests enclosed
+Note that a key test method is memHeaderOK and is run around all
+kmalloc and all kfree.   
+
+memHeaderOK tests for
+	//consistency check for memory block
+	//are we on a page boundary
+	//are we outside of HOLE
+	//are we larger than freemem
+	//are we less than maxaddr
+	//do we have a correct sanityCheck for memHeader
+	//is our size > 0 - we dont allocate headers for zero memory space
+	//if we point to another memHeader, does it point back to us (next/prev)
+	//if we point to next, is our address+size less than next
+
+So if any of the above fails, kassert halts execution and indicates problem
+This allows us to focus on correctness of values rather than general
+sanity and consistency.  With this in mind, we just need to focus on
+wether the values return from kmalloc and kfree make logical sense.
+
+snapshot.txt1
+-------------
+-shows that even though freemem is not on page boundary we shift to 
+next highest page boundary for memory structures.
+-initial freeMemList is placed correctly within boundries of freemem
+HOLE and maxaddr
+-initial allocation request of 1 byte returns a correct 16 byte allocation
+as confirmed by kassert.  freeMemList no longer has new allocated memory
+block and starts 0x20 bytes later.
+snapshot.txt2
+-------------
+-allocates second block and size, address are as expected and freemem list
+is updated to be consistent
+snapshot.txt3
+-------------
+-request size is exactly 1 paragraph
+snapshot.txt4
+-------------
+-request size is larger than available below HOLE, so allocation comes
+from higher address memory block
+snapshot.txt5
+-------------
+-request size exceeds largest memory block so null is returned
+snapshot.txt6
+-------------
+-request size just 1 byte larger than paragraph boundary, shows 
+correctly allocate up to next paragraph.  This test originally tested
+at HOLESTART boundary correctly but freemem keeps increasing as I code
+so this example doesnt show it but testing allocation of entire memory
+block just under HOLESTART does operate correctly
+

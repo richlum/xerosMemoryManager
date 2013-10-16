@@ -1,0 +1,7 @@
+bochsout.txt
+xeros/boot/zBoot/zSystem.out
+xeros/boot/zImage
+compile/*.o
+compile/xeros
+xeros/compile/xeros
+*.swp

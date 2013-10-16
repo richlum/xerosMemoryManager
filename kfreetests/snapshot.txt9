@@ -1,0 +1,25 @@
+   3  address=196000, size=269ff0, prev=  9f10, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3145968 (0x3000f0)memory blocks
+   --test(3): freeing C in AFCFE   : coalles prev and next
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9ec0)
+msghdr = 0x9eb0
+    -- verify correct updating of Allocated User Memory blocks
+        0, user address=0x9e00, hdr addres=0x9df0, size=0x20, sanity=0xda43
+        1, user address=0x9ea0, hdr addres=0x9e90, size=0x50, sanity=0xda43
+        2, user address=0x9ec0, hdr addres=0x9eb0, size=0x10, sanity=0x0
+        3, user address=0x9ee0, hdr addres=0x9ed0, size=0x10, sanity=0x0
+        4, user address=0x9f00, hdr addres=0x9ef0, size=0x10, sanity=0xda43
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9e90, size=    50, prev=     0, next=  9f10, sanity=  da43
+                DataStart Address = 9ea0
+   1  address=  9f10, size= 960e0, prev=  9e90, next=196000, sanity=  da43
+                DataStart Address = 9f20
+   2  address=196000, size=269ff0, prev=  9f10, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3146016 (0x300120)memory blocks
+    --result should have first memblock at head of freelist, not adjacent to fre
+emem, size 50
+ß

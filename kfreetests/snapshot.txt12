@@ -1,0 +1,25 @@
+Entered:kmalloc:  AT ../c/mem.c:51
+Entered:kmalloc:  AT ../c/mem.c:51
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0xa000)
+msghdr = 0x9ff0
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0xa080)
+msghdr = 0xa070
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0xa040)
+msghdr = 0xa030
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9f10, size=    10, prev=     0, next=  9ff0, sanity=  da43
+                DataStart Address = 9f20
+   1  address=  9ff0, size=    10, prev=  9f10, next=  a030, sanity=  da43
+                DataStart Address = a000
+   2  address=  a030, size=    10, prev=  9ff0, next=  a070, sanity=  da43
+                DataStart Address = a040
+   3  address=  a070, size= 95f80, prev=  a030, next=196000, sanity=  da43
+                DataStart Address = a080
+   4  address=196000, size=269ff0, prev=  a070, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3145632 (0x2fffa0)memory blocks
+ß

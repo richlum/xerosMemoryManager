@@ -1,0 +1,25 @@
+    -- test setup : Allocated User Memory
+        0, user address=0x9ea0, hdr addres=0x9e90, size=0x10, sanity=0xda43, pre
+v=0, next= 0
+        1, user address=0x9ec0, hdr addres=0x9eb0, size=0x30, sanity=0xda43, pre
+v=0, next= 9f70
+        2, user address=0x9f20, hdr addres=0x9f10, size=0x10, sanity=0xda43, pre
+v=0, next= 0
+        3, user address=0x9f40, hdr addres=0x9f30, size=0x10, sanity=0xda43, pre
+v=0, next= 0
+        4, user address=0x9f60, hdr addres=0x9f50, size=0x10, sanity=0xda43, pre
+v=0, next= 0
+Entered:printFreeList:  AT ../c/mem.c:338
+--freeMemList
+   0  address=  9eb0, size=    30, prev=     0, next=  9f70, sanity=  da43
+                DataStart Address = 9ec0
+   1  address=  9f70, size= 96080, prev=  9eb0, next=196000, sanity=  da43
+                DataStart Address = 9f80
+   2  address=196000, size=269ff0, prev=  9f70, next=     0, sanity=  da43
+                DataStart Address = 196010
+        total size available across 3145888 (0x3000a0)memory blocks
+   -- test AFBC, freeing B - coallesc left
+Entered:kfree:  AT ../c/mem.c:242
+kfree(0x9f20)
+msghdr = 0x9f10
+ß
